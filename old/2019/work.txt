@@ -1,0 +1,156 @@
+ls komut örnekleri
+Dosya veya klasör adlarýný otomatik olarak tamamlamak için sekme düðmesine basabilirsiniz .
+Göreli yolu olan Belgeler / Kitaplar listesi
+$ ls Belgeler / Kitaplar
+Mutlak yolu ile / dizin / ev / kullanýcý / Belgeler / Kitaplar listesi .
+$ ls / home / user / Belgeler / Kitaplar 
+Kök dizini listele:
+$ ls /
+Ana dizini listele:
+$ ls ..
+Kullanýcýnýn giriþ dizinini listeleyin (örneðin: / home / user):
+$ ls ~
+Uzun formatlý liste:
+$ ls -l
+Gizli dosyalarý göster:
+$ ls-a
+Uzun formatlý liste yapýn ve gizli dosyalarý gösterin:
+$ ls -la 
+Tarihe / saate göre sýrala:
+$ l -t
+Dosya boyutuna göre sýrala:
+$ ls
+Tüm alt dizinleri listele:
+$ ls *
+Özyinelemeli dizin aðacý listesi:
+$ ls -R
+
+Yalnýzca joker karakter içeren metin dosyalarýný listele:
+$ ls * .txt
+ls çýktý dosyasýna yönlendirildi:
+$ ls> out.txt
+Yalnýzca dizinleri listele:
+$ ls -d * /
+Dosyalarý ve dizinleri tam yol ile listeleyin:
+$ ls -d $ PWD / *
+
+--------------------------------------------------------------------------------------------------------------
+
+sisteme giriþ yaptýktan sonra (login ekranýna username ve parolamýmýzý girdikten sonra)
+karþýmýza gelen komut satýrýna ls komutu hakkýnda bilgi alacaz bunun için
+-"man ls"
+-"ls --help."
+-"ls -a\--all: var olan bütün dosya ve klasörleri gösterir."
+-"ls -A\--almost-all: . ve .. dýþýnda diðer bütün dosya ve klasörleri gösterir."
+-"ls -b: açýklamada grafik içeren karakterden kaçýn diyor.
+
+--------------------------------------------------------------------------------------------------------------
+
+1024 byte = 1 kibibyte       #
+1 mebibyte = 1024 kibibyte   # Bu durumda mebibyte ile 
+1 kilobyte = 1000 byte       # aralarýnda hep bir 24^ byte fark var 
+1 megabyte = 1024 kilobyte   # gibi gibi :)
+			     #gnu linux
+
+
+
+bazý insanlar demiþler 1000 byte = 1 kilobyte 
+gerçek ise 1024 byte = 1 kilobyte.
+bunun üzerine yeni bir kavram çýkmýþ kibibyte isimli
+1 kibibyte = 1024 byte ve 1 klobyte = 1000 byte 
+
+--------------------------------------------------------------------------------------------------------------
+
+tail araþtýr "!: -z"
+grep ile sadece 5 karakterlik bir dosya bulma
+
+--------------------------------------------------------------------------------------------------------------
+
+hiç bir gruba ayit olmayan kullanýcý oluþtur.
+bir dosya yý tek enter hakkýna sahip olarak hem kullanýcý hemde grup unu deðiþtir.
+alejandro isimli bir kullanýcý oluþtur.
+
+--------------------------------------------------------------------------------------------------------------
+
+ayný id ile "/bin/bash" kullanýcý oluþturursak kullanýcý sahibi kim olur.
+nogroup parametresini araþtýrýnýz.
+sudo çalýþtýrdýðýmýzda root deðiþkenlerinide kullanabilmeliyiz.
+openVPN + amazon servers (1yýl ucretsiz sunucu) = ücretsiz VPN
+name.tar.gz tek komutta çýkarma.
+go dady
+....................................................
+neden 4 tane birinci bölümleme type'i var.
+|
+|-->Donaným yapýlandýrmasýna baðlý olarak sabit disk cihazlarýnýn / dev / hdx veya / dev / sdx olarak adlandýrýldýðýný daha önce gördük. Sonraki bölüm sayýsý, sayý 1 'de baþlýyor. Bu nedenle dört (mümkün) birincil bölüm 1 ile 4 arasýnda numaralandýrýlmýþtýr.
+****************************************************************************************************************************************************************************************************************************************************************
+ext4 dosya dizinlerinde süperblok ne anlama gelir.
+|
+|-->Biçimlendirme superblock'u temizler ancak inode'larý disk boyunca daðýldýðý için inode'larý siler; tam olarak fs baðlý olduðu. Örneðin, bir EXT2 / EXT3 dosya sistemindeki alan bloklara bölünür, blok gruplarýna ayrýlýr; inodes, her blok grubundaki veri bloklarýndan hemen önce depolanýr.
+|
+|-->
+dumpe2fs, ext2 / ext3 / ext4 dosya sistemi bilgilerini boþaltmak, süper blok görüntülemesi ve cihazdaki dosya sistemi için grup bilgisini engellemesi anlamýna gelen bir komut satýrý aracýdýr.
+**************************************************************************************************************************************************************************************************************************************************************************************************
+lost+found araþtýr.
+|
+|-->Kayýp + bulunan klasör, Linux, macOS ve diðer UNIX benzeri iþletim sistemlerinin bir parçasýdýr. Her dosya sistemi - yani her bölüm kendi kayýp + bulunan dizinine sahiptir. Bozuk dosyalarýn kurtarýlmýþ bitlerini burada bulabilirsiniz.
+**********************************************************************************************************************************************************************************************************************************************
+networkden sonra ls off iþlecez :).
+...................................
+dizinler ve dosyalar neden 751 ve 655 geliyr araþtýr.
+|
+|-->Neden bu genellikle varsayýlanlar? Bir dosyanýn sahibinin hem okuyabilir hem de yazabilir. Ayný zamanda, paranoya seviyenize baðlý olarak, herhangi birinin bir dosyayý varsayýlan olarak görüntüleyebilmesine izin vermek, ancak dosyayý düzenlememesine izin vermek mantýklýdýr. Dosyalarýn varsayýlan olarak çalýþtýrýlamamasý da mantýklýdýr, çünkü çoðu dosya çalýþtýrýlacak programlar olmak zorunda deðildir.
+Dizin izinleri, bir kullanýcý yeni bir dizin oluþturduðunda içeride baþka birinin görebileceði ancak yazamadýklarý anlamýna gelir; yani, dizine yeni dosyalar ekleyemezler.
+Buradaki genel teori iþbirliðinden biridir. Alice bazý dosyalar ve dizinler yaratýrsa, en azýndan Bob tarafýndan keþfedilebilecekleri varsayýlýr. Bob daha sonra ihtiyacý olursa Alice'den daha fazla eriþim isteyebilir. Alice verebilir ya da veremez.
+Bu varsayýlanlarý deðiþtirmek istiyorsanýz, umask deðerini düzenleyebilirsiniz (genellikle / etc / profile içinde).
+********************************************************************************************************************
+++
+neden primary type sinde default olarak 2048 bit olarak geliyor.
+|
+|-->
+
+
+***
+10.000 kiþi var 5  blok var interneti böl.
+***
+aina ipv4 documentation 
+Daha önce IPv6 ila IPv4 rölesi için kullanýlýr (IPv6 adres bloðu 2002 :: / 16 dahil). Özel bir að içindeki yerel iletiþim için kullanýlýr. Ýki ayrý alt að arasýnda aðlar arasý iletiþimin kýyaslama testi için kullanýlýr. TEST-NET-2, dokümantasyon ve örnekler olarak atandý.araþtýr.
+tracerout da *** ne anlama geliyor.
+icmp echo_request nedir araþtýrýnýz.
+dhcp nedir araþtýrýn
+icmp ned ir araþtýrýn
+socket (network, unix) araþtýrný
+uniq socket kendi arasýnda iletiþim kurabilirmi
+|
+|-->Unix alan soketleri birbirleriyle iletiþim kurmaz. Programlar (uygulamalar) Unix alan soketleri kullanarak birbirleriyle konuþurlar. Sunucu, dosya sisteminde potansiyel olarak dosya izinlerini veya ana dizinin izinlerini ayarlayarak bir yuva oluþturur.
+***
+að patlatýrsanýz netstat çalýþtýrýn
+***
+rsync Nasýl çalýþtýðýný araþtýr örneklerle uygula.
+***
+stin 0    >
+ out 1   1>
+ err 2   2>
+***
+bay örnek
+writing one script with mr aydintd
+_____________________________________
+#!/bin/bash
+
+die() {
+	echo "$*" >&2 # logger "$*" >&2
+	exit 2
+}
+
+
+mkdir $1 >/dev/null >2&1 || "$0 çalýþmadý kardeþim. çünkü $1 hali hazýrda dosya sisteminde var. Ahanda yeri burasý iþte $(pwd)"
+____________________________________
+~$main.sh dizin_ismi
+~$main.sh dizin_ismi
+./main.sh .alýþmadý kardeþim. çünkü dizin_ismi hali hazýrda dosya sisteminde var. Ahanda yeri burasý iþte (dosya dizinin yeri)
+
+*****
+dolar ($) argüman olarak mevzuya katýlýr.
+*****
+info@aydintd.net
+*****
+hackthebox.eu

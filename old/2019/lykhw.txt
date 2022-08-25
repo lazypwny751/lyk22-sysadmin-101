@@ -1,0 +1,30 @@
+DHCP NEDÝR :
+
+DHCP nedir nasýl çalýþýr?
+DHCP Nedir – Nasýl Çalýþýr. ... DHCP (Dinamik Host Yapýlandýrma Protokolü – Dynamic Host Configuration Protocol) servisi, aðdaki istemcilere otomatik olarak 
+IP adresi atanmasýný saðlar. Böylece IP adresleri merkezi bir yerden kontrol edilir, her bir istemciye tek tek IP bilgisi girilmesi engellenir.
+
+Alternative:
+
+DHCP, basit olarak sistemdeki bilgisayarlara IP adreslerini ve buna ek olarak deðiþik parametreleri atamak için kullanýlan servistir.
+-----
+ICMP NEDÝR :
+
+ICMP, hata mesajlarý ve TCP/IP yazýlýmýnýn bir takým kendi mesaj trafiði amaçlarý için kullanýlýr. ICMP RFC 792'de tanýmlanmýþ ve RFC 950'de revize edilmiþtir. 
+Hatalarý raporlamak için kullanýlan, kontrol amaçlý bir protokoldür.
+-----
+ICMP ECHO_REQUEST NEDÝR :
+
+ICMP (Internet Control Message Protocol-Ýnternet Kontrol Mesaj Protokolü) ... Örneðin, sorun çözümü için sýkça kullanýlan Ping ve Tracert komutlarý 
+ICMP Echo Request ve ICMP Echo Reply mesajlarý ile çalýþýr. ICMP Paket Yapýsý ICMP mesajlarý IP datagramýnýn veri alanýnda taþýnýr.
+-----
+SOCKET NEDÝR (UNIX, NETWORK) : 
+
+Bir UNIX soketi, ayný makinede çalýþan iþlemler arasýnda çift yönlü veri alýþveriþine olanak saðlayan iþlemlerarasý bir iletiþim mekanizmasýdýr. 
+IP soketleri (özellikle TCP / IP soketleri) að üzerinden iþlemler arasýnda iletiþime izin veren bir mekanizmadýr.
+-----
+AINA IPV4 DOCUMENTATION NEDÝR :
+
+Daha önce IPv6 ila IPv4 rölesi için kullanýlýr (IPv6 adres bloðu 2002 :: / 16 dahil). Özel bir að içindeki yerel iletiþim için kullanýlýr. 
+Ýki ayrý alt að arasýnda aðlar arasý iletiþimin kýyaslama testi için kullanýlýr. TEST-NET-2, dokümantasyon ve örnekler olarak atanmýþdý.
+-----

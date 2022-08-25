@@ -1,0 +1,239 @@
+1. /BIN = Binary: içerisinde is'mizin çalıştırabilir programlarımızın bulunduğu dizin.
+2. /BOOT: bilgisayarımızın açılması için gerekli dosyaların depolandığı dizin.
+3. /ETC: Etc önemli bir dizindir ayar dosyaları burada yer alır.
+4. /USR: Unix System Resources. /LOCAL kendi kurduğumuz programların dizinlerini barındırır. /SHARE: man dosyalarının bir kısmı burada barındırılır.
+5. /VAR: Değişken veri dizini. /LIB porogramların kullandığı Kütüphane dizinidir. /LOG Loglar'ın bir kısmı burada tutluyor.
+6. /TMP: sistemin geçici dosyaları burada depolanır ve her reboot'ta bu dosyalar silinir.
+8. /DEV: aygıtlarımızın dosyaları burada bu dizinden aygıtlarımıza erişebilir	!:Gnu\Linux sistemlerinde herşey bir dosyadır. 
+9. /HOME: Kullanıcı dosyaları burada yer alır.
+10. /LIB: sistemin kullandığı kütüphaneler ve kernel modülleri burada yer alır.
+11. /LIB64: 64 bit mimarili sistemlerde kütüphane dizini.
+12. /MNT: harici disklerimizin dizinidir ve harici bir disk takmadığımız sürece boş bir dizindir.
+13. /OPT: 3. parti yazılımların burada kaydolur.
+14. /ROOT: Kök kullanıcı için home dizini.
+15 /SBIN: Sistemi ynetmek ve kullanıcıların kullanması için gereken programların depolandığı dizin.
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+1. ls logda "d" ile başlıyor ise dizin ve "-" ile başlıyorsa dosyadır.
+2. "ls -a -l" or "ls -l -a" = "ls -al" or "ls -la".
+3. pwd: bulunduğumuz dizini ekrana yazdırır.
+4. "cd" ile kullandımız kullanıcımızın home dizinine gideriz.
+5. "cd -" ile bir önceki dizine bağlanır.
+6. "clear = ctrl + l".
+7. "date" sistemde kayıtlı olan tarihi ekrana yazdırır.
+8. "shebang" satırı = "#!/usr/bin/bash" gibi gibi.
+9. "rm" proogramı ile dizin ve dosyaları uçurabiliriz.
+10. "mv" ile bir dosya veya dizinin yolu değiştirilir.
+11. "cp" dosya veya dizinleri kopyalar.
+12. "rm '-d'" parametresi ile boş dosyaları kaldırabiliriz. -d parametresinden sonra * herşeyi uçurur .dosyalar hariç -dr * parametresi ile herşey uçurulur. 
+13. rm "*.gun"
+14. "!!" en son programı veya komutu yeniden çalıştırır
+15. "?" değişkeni hata kodlarını tutar programın çalışıp çalışmadığını "echo $?" olarak anlayabiliriz. genelde "0" çalışmıştır.
+16. çıkış kodlarını ayarlamak için "exit 0" 0 değişkendir.
+17. "more" ve "less" aynı görevi gören programlardır. (shift + 7)
+18. "uname -a" ; "uptime" ; "lsb_release -a" ; "lscpu" ; "cat /etc/centos_release" ; "lspci"
+19. "awd && ls" eğer herhangi bir komut manasız ise diğer komutlar çalıştırılmaz.
+20. " ls || dir" bir komut patlarsa ikinci komut üzerinden devam ediyor.
+21. "rm test && echo "Çalıştı...[OK]" || echo "Başka zaman kardeşim :)"
+22. mv /tmp/name /tmp/name2.
+23. "touch 'name'[n1..n2]"
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+1. "cd -" bir önceki dizine bağlar.
+2. "printenv" ile sistemin tanımladığı değişkenleri listeler.
+3. "PATH" değişkeninde çalıştırılabilir programların değişkenleri tanımlıdır.
+4. "export" fonksiyonu ile değişkenlerin ömrü üzar.
+5. "export PATH=/bin" mesela sadece binary dizinindeki programlar aranır.
+6. "export PATH=$PATH:/home/user/test"
+7. "mkdir ~/bin" 
+8. "etc/bash"
+9. global değişkenler kaydedilir mesela (PATH=$PATH:~/folder"
+10. oluşturacağımız "bin" dışında isimli dizinleri kayıt etmez bunun için .bashrc dosyasına kaydetmek gerekir.
+11. "head" ilk satırları gösterip geçen basit bir program. eğer parametre verilmez ise verilen dosyanın ilk 10 satırı ekrana yansıtılacak. -n parametresi
+ile sondan kaç satırın görünteleneceğine dair bir parametredir.
+12. "tail" ise head programının pro versionudur son satırı gösteriri default olarak 10 satır gösteriri. 
+13. alt+sağ-sol farklı terminale geçer.
+14. "cat > dosya + 2+1" ; "bc < dosya"
+15. "wc" dosyaların içinden detaylı bilgi almayı sağlar.
+16. "cat dosya > dosya2" üzerine yazar. ; echo lyk2019 > dosya.
+17. "cat dosya >> dosya" altına ekler. ; echo fatih >> dosya.
+18. "wc dosya" ; "wc < dosya"
+19. "<" input ; ">" output.
+20. "cat dosya | head -n 4 | tail -n2"
+21. "ls -l | grep "log" | sort +4n | less" <-- example
+22. "|" çıktı çıkaran bir programın çıktısını alıp başka bir programa giridi olarak gönderir.
+23. "grep -w *" dosyanın içinde geçen kelimeyi satır halinde sunar.
+24. "grep -n *" kelimenin hangi satırda olduğunu gösterir.
+25. "ls -a | grep '[.]log' <-- example
+26. "PATH=$PATH:[route]" 
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+1. "find / -name *" fine bir dosya veya dizinin nerede olduğunu bulur. Kısacası find programı ile dizinlerin ve dosyaların yolları bulunuyor.
+2. "locate" ile bir dosya veya dizin find'dan daha hızlı bir şekilde bulur.
+3. "adduser" ile kullanıcı oluşturuyoruz.
+4. "/etc/passwd" içinde parolalar saklanır. Burada manula olarak kullanıcıların id lerini değiştirebiliriz: (root'un id sini değiştirirsek üçabiliriz :)
+burada hangi shell'i kullanağı hangi home dizinini kullanacğına dair her şeyi ayarlayabiliriz.
+5. "/etc/passwd"  [username]:[x(password)]:[UID]:[GID]:[Comment]:[Home diretory]:[Default shell].
+6. "/etc/skel/" bu dizinde yeni oluşturulan kullanıcıların default home dosyaları tutlur (.bashrc, .bash_history) gibi.
+7. "/etc/shadow" bu dosyada kullanıcıların parolalarının hash hali bulunur. "$1 md5, $2a $ 2y Blowfish, $5 sha-256, $6 sha-512"
+8. "/etc/sudoers" or "/etc/sudoers.tmp" sudo nun ayar dosyası.
+9. "usermod -aG [group] [username]" bir kullanıcıyı gruba ekler.
+10. "groups [name]"  hangi kullanıcını hangi grubda olduğunu gösterir.
+11. "chmod 777 [dizin]" dosya yetkilendirme. yazma okuma vb...
+12. "chmod -s [foldername]" user id ye özel izin.
+13. "r" okuma, "w" yazma, "x" çalıştırma, "t" benden başka kimse silemez.
+14. "chattr -i [name]" root bile elleyemez. 'Root kendi kendisini kısıtlar'
+15. "chfn" kullanıcı bilgilerini değiştiri 'isim parola' gibi.
+16. "w" ve "finger" kullanıcılar hakkında bilgi listeler.
+17. "id" ile group id'leri gösterir.
+18. "last" ile sisteme son giriş yapan kullanıcıları listeler.
+19. "/etc/gshadow/" group'ların parolaların hash'ları burada.
+20. "locate update" ile locate veri tabanı güncelleniyor.
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+1. "useradd [name]" kullanıcı oluşturma.
+2. "adduser [name]" daha gelişmiş kullanıcı oluşturma.
+3. "/etc/passwd" dosyasından el ile kullanıcı oluşturulabilir.
+4. "usermod" ile kullanıcıyı oluşturduktan sonra değişiklikler yapılır.
+5. "chmod u-x,o+w ~/[name]" kullanıcıdan yetkiyi alıp diğerlerine vermek.
+6. dizinlerden bahsederken çalıştırma"x" izin bu dizin girmek demekdir.
+7. "ln" programı ile link oluşturabiliriz "-s" sembolik link.
+8. sembolik link oluştururken herzaman ve herzaman dosyamızı fullpath olarak vermeliyiz eğer göreceli yol olarak verirsek doysa patlayabilri. "ln -s [/home/user /tmp/name]"
+9. katı link vermek için hiçbir parametre girmiyoruz. Katı link yaparken iki dosya birbirine bağlanır.
+10. inode işletim sistemimizin içindeki bir yapıdır her dosyaya kendine özgü id'ler atar.
+11. "find" programında "-name" parametresi kullanılmalı.
+12. "chgrp" ile dosya veya dizinlerin gruplarını değiştirir.
+13. "chusr" ile bir dosya veya dizinin kullanıcı yetkisini atanabilir.
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+1. "file [name]" ile bir kaynağın dosyamı veya dizinmi olduğunu görebiliyoruz.
+2. sbin dizininde sistem dosyaları yer alır normal kullanıcı ile root dosyalarını kullanabilmek için "echo "export PATH=$PATH:/usr/sbin" >> .bashrc"
+3. "sl" ls yerine sl yazanları trollemek için gelen bir yazılımdır.
+4. paket yöneticileri olabildiğince az veri silmek üzere tasarlanmıştırlar.
+5. "wget [path]" internetten bir dosya indirmek için nu programı kullanıyoruz.
+6. "apt download" ile bir paketi kurmadan indirebiliriz.
+7. "dpkg -i" debianpackage ile indirdiğimiz bir dosyayı kurabiliyoruz.
+8. "apt purge [foldername]" bu sstemdeki bu programı kökden uçur.
+9. "dpkg -s [programname]" hangi programın hangi paket ile geldiğini gösterir.
+10. "dpkg -L [packname]" hangi programın hangi dosyaları neleri nereye nasıl kuracak.
+11. "dpkg -L [dpkg] | wc -l"
+Tar: bir arşivleme aracıdır. Kullanıcılar tarafından çok sevilen bir araçtır.
+12. "tar -xvf [name.tar.gz]" bulunduğumuz dizine aynı isimde sıkıştırma dosyasını açar. "-C" parametresi ile belirli bir dzine de çıkartabiliriz.
+13. "/etc/yum.repos.d/" dizini.
+14. "yum install epel-release" ile daha çok depo çekebilebilir.
+15. "yum search [name]" depoların içerisinde 'name' isimli yazılım arayacaktır.
+16. "yum check-update" = "apt-get update".
+17. "gzip -d [name.gz] or gunzip [name.gz]" ile sıkıştırılmış gz dosyalarını açabiliriz.
+18. "gzip -c [name] or gzip [name]" ile dosyaları arşivleyebiliriz.
+19. "sed" çıktıları dosyalara script olarak ekler.find
+20. "md5sum" ile bir dosyanın hash'i öğrenilir.
+21. "sed 's/x/on/' /etc/passwd > ~/test"
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+1. "tac" cat programının tersidir.
+2. "echo "the tunel" | tr -d 't' " çıktı --> he unel.
+3. "echo "1 yav 1 1" | tr '1' 'he'" çıktı --> he yav he he.
+4. "uniq" programı ile textlerin içindeki terar eden kelimeleri ortak alarak 1 cümle olarak yayınlanır. "-i" parametresi ile büyük küçük harf duyarlılığı ayarlanır.
+5. "diff" 2 aynı ama farklı text dosyası arasındaki farkları listeletiyotuz.
+6. "find -name "*yk* -exec chown root:root {} \"
+7. "chown root:root 'find -name "*oyk*" -o -name "oyk*"'
+8. "find . -name "*yk*" | xorgs chown root:root"
+9. "split" dosyaları bölmek için  kullanıla program.
+10. "cat" ile bölümlenen doyalar tekrar birleştirilir.
+11. "crontab */2" her "*/n" arayla işlem yap.
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+1. gnu linux sistemlerimizde çok sevdiğimiz bir araç vardır ismi ise "fdisk"
+2. "lvm" ile dikimizde sanallaştırma.
+3. "fdisk [disk(/dev/sdc)]" böylelikle	diskimizi ayarlamak için bir konsol açılıyor. "n" ile diski bölümlemeye başlayabiliriz.
+4. "df" ile disk bilgileri alınır.
+5. "mkfs" ile dosya sistemi formatlıyoruz 'mkfs.ext4' <- en çok kullanulan.
+6. "mount" ile oluşturduğumuz diski bir dizine bağlandırıyoruz.
+7. "dd" başka mükemmel bir araçdır.
+8. "dd if=/dev/zero of=/mnt/zero.img bs=4M count=512" mesela burada 'zero.img' isimli noş bir dosya oluşturduk bununla sanal makineye alan verilebilir.
+9. "umount" mount ile bağladığımız aygıtları burada patlatabiliriz(çıkarabiliriz.
+10. mesela bir usb aygıtını ""dd if=/dev/zero of=/mnt/zero.img bs=[]sizenumber]B/M/G count=[number2]" ile usb'mizi doldurabiliriz.
+11. "df -hT" ile daha detaylı disks bilgisi alınır.
+12. usb takdığmızda bu "/dev" altına gelir biz bunu herhangi bir dizine bağlayabilirz "mount" ile.
+13. "/etc/fstab" dosyası dosya sistemlerimizi ynettiğimiz dosyadır.
+14. "fsck" gnu linux uyumlu dosya sistemlerinde kullanarak diskimizide mevzu çıkma oaranını en az'a düşürüyoruz.
+15. "bkid" ile hangid disk ne dosya sistmei ile formatlanmış görebiliyoruz.
+16. "sudo bkid | sudo grep "dd8" | awk '{print $2}' | sudo tee -a /etc/fstab" <-- mounted.
+17. "mount -a" ile '/etc/fstab' içindeki diskleri mount eder.
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+1. "/etc/login.defs" kullanıcı b,r ayar yaptığında bu ayarlar buradaa depolanır önemli bir dosyadır.
+2. "tcp" hızlı değildir çünki bir veri gönderdiğimizde hızlı verini ulaşıp ulaşmadığı denetlenir.
+3. "udp" hızlı bir bağlantıdır çünki giden veri ulaşıp ulaşmadığı denetlenmez.
+4. 255 den fazla ip adress olamaz.
+5. 1024'e kadar olan protokoller network portlarıdır. 1024'den 65536 uygylumaların çalışması için high ayarlanmış protokolleridir.
+6. 25 sntp nin kullandığı port dur.
+7. "/etc/services" dosyasında portlar vaardır.
+8. "00000000=0min" "11111111=255max"
+9. "ip addr add [ip addresi] dev [ağ kartı]"
+10. "ip addr del [ip addresi] dev [ağ kartı]"
+11. "traceroutet" paketimiz nasıl nelere gidiyor öğren.
+12. "ping google.com -c [sayı]" ile zamanlanmış ping veri göndermesi yapılır.
+13. "whois fatihkoc.net" fatih hocanın sitesi hakkında bilgi toplar :D.
+14. "telnet" ile uzaktan bağlantı yapılır.
+15. "nc ('netcat')" ile sağ sol dinleyebiliyoz (yerel ağımızda) eğer üniversitede felan tehlike işler yani sıkıntılı :)
+16. "nc -z -v [ip adres] 0-n"
+17. "mtr" arayüzlü program siteler hakkında pasif bilgi toplar.
+18. "tcpdump" wireshark ın terminal versionudur.
+19. 1 adet master sunucu içerisinde bütün domainler yer alır bizler domainlere slave'lerden erişiyoruz.
+20. "/etc/nsswitch.con" burada dns ile ilgi ayarlamalar tutulur.
+21. "/etc/hosts" ile kullandığım makinemde istdiğim makinaya domain girerek yönlendiririlir. [ip][domain]
+22. "/etc/resolv.conf" buradsıda hosts a benzer sadece alternatif gibidir.[domain][ip]
+23. "dig" komutu ile name servers'lar tutulur.
+24. "ssh" secury shell uszaktan güvenli shell bağlantısı "'ssh' tcp protokolü kullanarak bağlantı sağlar" eğer ssh protokolleri uyumlu değilse bağlantı
+istemci tarafından anında kesilir sanıyesinde.
+25. "ssh -l [user name] [ip adres]" tak diye bağlanıyor mubarek :D.
+26. "ssh -l root [ip adress]"
+27. doğrulama dosyamızın izinleri 600 olamlı yoksa çalışmaz ve .ssh dizini ise 700.
+28. "-p [port number]" böylece farklı bir port belirtiğimizde bu parametreyi kullanmalıyız.
+29. "-vvv" ne kadar fazla 'v' koyarsak o kadar fazla detay gösterir.
+30. "ssh-keygen" ile anahtarımızla kolayca şak diye sunucumuza giriş yapabiliyoruz.
+31. "scp dosya aydintd@10.47.65.125:~/dosya2" örnek
+32. "scp [dosya] [username]@[ip addres]:[pathtotarget&name]" a123
+33. "dhclient" ile kendimize yeni ip address atayibiliriz. "-r" parametresi ile zorlayabiliyoruz  'ip ver lan' gibi.
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+1. sunucumuza "sudo apt-get install openssh-server" or "sudo yum install openssh-server"
+2. pc mize "sudo apt-get install opnessh-client" or " sudo apt-get install opnessh-client"
+3. pub key sunucuda duruyor privite key istemcide duruyor.
+4. rsync -avr /home/fatih/dizin/ fatih@192.168.57.250:/home/fatih/test
+5. "top" programı ile süreçler gözetlerin "htop" hightop daha profesyonel kullanımı varır.
+6. "[komut] &" arka planda çalışan görev.
+7. "nice -n [number] [command]"
+8. "renice -n 5 528" öncelikleri tekrardan atamak için nice komutu kullanılınır.
+9. /etc/security/group.conf
+9. "fping -g 192.168.0.1/24" mülti kombolu ping.
+10. "ps" ps koomutu çalıştırıldığı an hangi programlar çalışıyor ise süreç var ise tak diye ekrana basar.
+11. "strace [komut]" ile komutların arka planda is ile neler konuşduğunu görüntületebiliriz.
+12. "/dev/null" sistmimizde bulunan bir karadelik gibidir ona output oalark gönderdiğimiz hede leri yok eder.
+13. "mkdir test_dizini 2> dosya" 'test_dizini' zaten var olan  bir dizin bu komut girildiğnde stnerr yani 2. kanal'a yazılanlar dosyaya yazılır ve ekranda
+gösterilmez.
+14. "systemd" is mizi yönetebilmemiz için bütün diğer küçük uygulumaları içerisinde barındırır.
+15. "systemctl status/start/stop/restart/ [servicename]"
+16. "systemctl status --all" bütün servisleri gösterir.
+17. "journalctl" sistemin loglarını bu komut ile görebiliriz.
+18. "/var/log/" içerisinde log'lar kayıt edilir (not: sistem patlatılınca ilk hedef dizin burasıdır :D)
+19. "logger" programı ile sistem logu üretir. mesela "logger merhabaaa" bu yazı artık sistem loglarının tozlu sayfalarına kaydedildi.
+20. fonksiyon tanımlamak için "die(){   }"
+21. "systemctl stop sysylog" sistemi patlattıktan sonra girilmesi gereken ilk komut :D.
+22. "/etc/var/syslog.conf" burada hangi logların neredeki dosyaya kaydedileceği belirtilir.
+23. "rpm" centOS un paket yöneticisidir.
+24. "firewalld" güvenlik duvarı programımızı halletmemiz lazım. işte o komut --> "systemctl stop firewalld" bu komutdan sonra webpage'miz açılacaktır.
+25. "/etc/httpd/conf/httpd.conf" dosyasında apache web sunucusu için öntanımlı ayarları barındıran dosya.
+26. "curl [path]" bir sitedeki yazıları curl bizim için pat diye getirecektir.
+! mysql ile kurulumları tamamla başka bir kullanıcıc oluştur (onu araştır)
+!! wordpress'i internetten indir ve dosyaları gereken dosyaya at "for httpd --> /var/www/html/" gereken ayarlama dosyasının cp'sini.
